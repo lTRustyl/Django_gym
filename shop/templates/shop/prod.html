@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="vievport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Game Biography</title>
+    <meta name="description" content="Game Biograbhy">
+    <meta name="keywords" content="game biography, game">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/adaptive.css' %}">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="{% static 'js/common.js' %}"></script>
+</head>
+
+<body>
+    <div class="main">
+        <header class="header">
+            <div class="hamburger" id="hamburger-1">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+            <a href="/"><img src="{% static 'img/trip.png' %}" width="110"></a>
+            <ul class="navigation">
+                <li><a class="t1" href="/">Main</a></li>
+                <li><a class="t2" href="/shop">Shop</a></li>
+                <li><a class="t3" href="/gum">Gym</a></li>
+                <li><a class="t4" href="/support">Support</a></li>
+            </ul>
+            <div class="search">
+                <form action="{% url 'prods_page_url' %}" method="get" id="search_form">
+                    <input type="text" name="search" placeholder="Search">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </form>
+            </div>
+        </header>
+        <div class="web_content">
+            <div class="content">
+            	<br>
+
+
+
+
+
+
+                <h1><a name="top">{{prods.name_prod}}</a></h1>
+                <div class="info_game_page">
+                    <img class="img" src="{{prods.prod_img.url}}"><br><br>
+                    <span class="label">Price : </span><span class="value">{{prods.price_prod}}</span>
+                    <span class="label">County : </span><span class="value">{{prods.county}}</span>
+                    <span class="label">Brand : </span><span class="value">{{prods.brand}}</span><br><br>
+                    {{prods.text_prod}}
+
+
+
+
+
+
+
+                    <hr>
+                </div>
+
+                </br>
+
+                {% load static %}
+                <script src='{% static "js/script.js" %}'></script>
+                </div>
+                <div class="button" align="center">
+                    <a href="#top">UP</a></br>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Test Project</p>
+        </div>
+    </div>
+</body>
+
+</html>
